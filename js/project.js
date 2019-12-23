@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
 });
 
-//calculate
+//click for increase and decrease number
 $('#add1').on('click', function(){
     var getValue = $('#member').val();
     userClickUp(getValue); 
@@ -96,7 +96,7 @@ function eachRecipe(id) {
     $('#border').show()
     $('#hide-show').show()
 }
-
+//show recipe
 function showRecipe(name, img , guest) {
     var result = "";
     var input = "";
