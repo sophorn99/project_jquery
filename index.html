@@ -14,81 +14,82 @@
         height: 48%;
         position: absolute;
         left: 50%;
-      
+
     }
-    #image{
+
+    #image {
         background-image: url(images/1.jpg);
         background-size: cover;
     }
-    #show,#recipe, #done{
+
+    #show,
+    #recipe,
+    #done {
         border: 3px solid rgb(9, 197, 9);
         background-color: black;
         box-shadow: 0px 0px 10px grey;
         border-radius: 10px;
+
     }
-    #indradient,#instructions{
+
+    #indradient,
+    #instructions {
         background-color: black;
         box-shadow: 0px 0px 10px grey;
         border-radius: 5px;
     }
-    #add1,#add2{
+
+    #add1,
+    #add2 {
         background-color: black;
         box-shadow: 0px 0px 10px grey;
+
     }
-    
-  
 </style>
-<body id="image"
-     <!-- select form  -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
+
+<body id="image">
+  
+    <div class="container mt-4 ">
+        <div class="row" >
+            <div class="col-6">
+                    <h4 class=" text- text-white" >Special Food</h4>
                 <select id="recipe" class="form-control text-white">
                     <option value="disableed selected">Choose recipe</option>
                 </select>
             </div>
-            <div class="col-4"></div>
-        </div>
-        <hr>
-        <div class="row mt-5" id="recipe-result"></div>
-        <!-- Navbar -->
-        <div class="row mt-4">
-            <div class="col-4"></div>
-            <div class="col-4" id="hide-show">
-                <form action="#">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-dark" type="button" id="add2">&minus;</button>
-                        </div>
-                        <div id="input">
-
-                        </div>
-                        <div class="input-group-append">
-                            <button class="btn btn-dark" type="button" id="add1">&plus;</button>
-                        </div>
+            <div class="col-6" id="hides">
+                <h4 class="text-white">Number of Person</h4>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-dark" type="button" id="add2">&minus;</button>
                     </div>
-                </form>
+                    <input type="text" value="0" class="form-control text-center" id="member">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" type="button" id="add1">&plus;</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mb-4">
+            <div class="col-4"></div>
+            <div class="col-4"id="recipe-result">
             </div>
             <div class="col-4"></div>
         </div>
-    </div>
-    <h1 class="display-1 text-center"></h1>
-    <div class="container mt-4">
         <div class="row">
             <div class="col-6">
                 <h5 id="indradient" class=" text-center text-white"></h5>
                 <table class="table table-borderless text-white" id="done"></table>
             </div>
-            <div class="borders" id="border"></div>
+            <!-- <div class="borders" id="border"></div> -->
             <div class="col-6">
                 <h5 id="instructions" class=" text-center text-white"></h5>
                 <table class="table table-borderless text-white" id="show"></table>
             </div>
         </div>
     </div>
-
-    </div>
+    <h1 class="display-1 text-center"></h1>
     <script src="js/project.js"></script>
 </body>
 

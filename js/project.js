@@ -12,26 +12,26 @@ $(document).ready(function () {
 });
 
 //click for increase and decrease number
-$('#add1').on('click', function(){
+$('#add1').on('click', function () {
     var getValue = $('#member').val();
-    userClickUp(getValue); 
+    userClickUp(getValue);
 });
 
-$('#add2').on('click', function(){
+$('#add2').on('click', function () {
     var getValue = $('#member').val();
-    userClickDonw(getValue); 
+    userClickDonw(getValue);
 });
 
-function userClickUp(add){
+function userClickUp(add) {
     var getValue = parseInt(add) + 1;
-    if(getValue <= 15){
+    if (getValue <= 15) {
         $('#member').val(getValue);
-        calulateGuest($("#member").val()); 
+        calulateGuest($("#member").val());
     }
 }
-function userClickDonw(minus){
+function userClickDonw(minus) {
     var getValue = parseInt(minus) - 1;
-    if(getValue >= 1){
+    if (getValue >= 1) {
         $('#member').val(getValue);
         calulateGuest($("#member").val());
     }
@@ -42,7 +42,7 @@ function calulateGuest(guests) {
     var newQuanlity;
     var result = "";
     quanlities.ingredients.forEach(element => {
-        var {quantity} = element;
+        var { quantity } = element;
         getDivis = quantity / getOldGuests;
         newQuanlity = getDivis * guests;
         result += `
@@ -54,7 +54,7 @@ function calulateGuest(guests) {
         </tr>
     `;
     });
-     $("#done").html(result);
+    $("#done").html(result);
 }
 
 function getApi() {
@@ -76,7 +76,7 @@ function chooseRecipe(recipe) {
     });
     $('#recipe').append(option);
 }
-$('#border').hide()
+$('#border,#hides').hide()
 $('#hide-show').hide()
 function eachRecipe(id) {
 
@@ -94,17 +94,15 @@ function eachRecipe(id) {
         }
     });
     $('#border').show()
-    $('#hide-show').show()
+    $('#hide-show,#hides').show()
 }
 //show recipe
-function showRecipe(name, img , guest) {
+function showRecipe(name, img, guest) {
     var result = "";
     var input = "";
     result += `
-    <div class="col-3"></div>
-    <div class="col-3"><h2 class="text-white width="10px">${name}</h2></div>
-    <div class="col-3"><img src="${img}"width="200" class="img-thumbnail"></div>
-    <div class="col-3"></div>
+    <h4 class="text-white text-center mt-5 display-5">${name}</h4>
+    <img src="${img}"width="200" class="img-thumbnail">
    `;
     $('#recipe-result').html(result);
 
@@ -113,13 +111,14 @@ function showRecipe(name, img , guest) {
     `;
     $('#input').html(input);
 }
+//show indredient
 function showIngredient(ingredient) {
     $('#indradient').html("Ingredients");
     var result1 = "";
     ingredient.forEach(item => {
         result1 += `
         <tr>
-             <td><img src="${item.iconUrl}" width="60" class="rounded"></td>
+             <td><img src="${item.iconUrl}" width="80" class="rounded"></td>
             <td>${item.name}</td>
             <td>${item.quantity}</td>
             <td>${item.unit[0]}</td>
